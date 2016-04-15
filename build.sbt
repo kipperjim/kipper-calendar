@@ -14,5 +14,6 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "2.6.3" % "compile" withSources(),
   "org.scalaz" %% "scalaz-core" % "7.2.0" % "compile" withSources(),
-  "ch.qos.logback" % "logback-classic" % "1.1.3"
+  "ch.qos.logback" % "logback-classic" % "1.1.3",
+  "im.mange" %% "little-server" % "0.0.8" %  "compile" withSources()
 )

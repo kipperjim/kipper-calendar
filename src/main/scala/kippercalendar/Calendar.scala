@@ -7,7 +7,9 @@ object Calendar {
   val kipperCalendarContainerId = "kipperCalendarContainerId"
 
   def apply(initialDateTime: DateTime) =
-    <div id={kipperCalendarContainerId}>
-      {MonthCalendar(new Interval(new DateTime().withTimeAtStartOfDay(), new DateTime().withTimeAtStartOfDay().plusDays(1)))}
-    </div>
+    <form class="lift:form.ajax">
+      <div id={kipperCalendarContainerId}>
+        {MonthCalendar(new Interval(new DateTime().withTimeAtStartOfDay(), new DateTime().withTimeAtStartOfDay().plusDays(1)))}
+      </div>
+    </form>
 }

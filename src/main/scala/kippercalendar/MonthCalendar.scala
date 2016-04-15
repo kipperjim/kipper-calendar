@@ -13,14 +13,13 @@ object MonthCalendar {
 
   def apply(monthInterval: Interval): NodeSeq = {
     <h3>
-      {monthInterval.getStart.getYear.toString + " " + monthFull(monthInterval.getStart)} ++
+      {monthInterval.getStart.getYear.toString + " " + monthFull(monthInterval.getStart)}
       <div class="btn-group pull-right">
         {SHtml.ajaxButton("Day", () ⇒ SetHtml(kipperCalendarContainerId, DayCalendar(new Interval(monthInterval.getStart.withDayOfMonth(new DateTime().getDayOfMonth), monthInterval.getStart.withDayOfMonth(new DateTime().getDayOfMonth).plusDays(1)))), "class" → "btn btn-default")}
         {SHtml.ajaxButton("Month", () ⇒ JsCmds.Noop, "class" → "btn btn-default active")}
       </div>
     </h3> ++
     previousMonthButton(monthInterval) ++
-      <span class="col-lg-8"/> ++
     nextMonthButton(monthInterval)
   }
 
