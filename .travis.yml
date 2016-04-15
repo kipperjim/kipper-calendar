@@ -5,3 +5,4 @@ jdk:
   - oraclejdk8
 addons:
   hostname: localhost
+sudo: required
