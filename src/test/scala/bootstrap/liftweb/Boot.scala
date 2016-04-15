@@ -1,5 +1,6 @@
 package bootstrap.liftweb
 
+import kippercalendar.RestAPI
 import kippercalendar.view.View
 import net.liftweb.common.{Full, Loggable}
 import net.liftweb.http._
@@ -17,6 +18,7 @@ class Boot extends Loggable {
 
     LiftRules.addToPackages("kippercalendar")
     LiftRules.logServiceRequestTiming = false
+    LiftRules.dispatch.append(RestAPI)
 
     setupSitemap()
     setup404Handler()

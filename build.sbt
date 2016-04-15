@@ -15,5 +15,11 @@ libraryDependencies ++= Seq(
   "net.liftweb" %% "lift-webkit" % "2.6.3" % "compile" withSources(),
   "org.scalaz" %% "scalaz-core" % "7.2.0" % "compile" withSources(),
   "ch.qos.logback" % "logback-classic" % "1.1.3",
-  "im.mange" %% "little-server" % "0.0.8" %  "compile" withSources()
+  "im.mange" %% "little-server" % "0.0.8" %  "compile" withSources(),
+  "im.mange" %% "driveby" % "0.3.28" % "test" withSources(),
+  "com.typesafe.akka" %% "akka-actor" % "2.3.12" % "compile" withSources(),
+  "com.typesafe.akka" %% "akka-remote" % "2.3.12" % "compile" withSources(),
+  "com.typesafe.akka" %% "akka-slf4j" % "2.3.12" % "compile" withSources(),
+  "com.typesafe.akka" %% "akka-testkit" % "2.3.12" % "test",
+  "org.scalatest" %% "scalatest" % "2.2.6" % "test" withSources()
 )
