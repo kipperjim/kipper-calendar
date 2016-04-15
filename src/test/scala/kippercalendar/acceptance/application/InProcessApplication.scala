@@ -15,7 +15,6 @@ case class InProcessApplication(name: String, port: Int) extends ApplicationCont
   def stop() { }
 
   def hasStarted = {
-    true
-//    Source.fromURL(application.baseUrl + "/given/system/hasStarted").getLines().toList.headOption.contains("OK")
+    Source.fromURL(application.baseUrl + "/given/system/hasStarted").getLines().toList.headOption.contains("OK")
   }
 }
