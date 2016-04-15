@@ -11,5 +11,4 @@ object BuildConfig {
 
   def browserType = BrowserTypes.phantomjs
 //  def browserType = BrowserTypes.chrome
-  val hostAddress = java.net.InetAddress.getLocalHost.getHostAddress
 }
