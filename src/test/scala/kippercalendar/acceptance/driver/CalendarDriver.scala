@@ -12,8 +12,12 @@ case class CalendarDriver(context: Context, browser: Browser) extends Navigable 
   import kippercalendar.DayCalendar._
   import kippercalendar.Calendar._
 
-  def clickPreviousMonth = click(previousMonthButtonId)
-  def clickNextMonth = click(nextMonthButtonId)
+  def clickDisplayDayCalendar() = click(dayViewButtonId)
+  def clickDisplayMonthCalendar() = click(monthViewButtonId)
+  def clickPreviousMonth() = click(previousMonthButtonId)
+  def clickNextMonth() = click(nextMonthButtonId)
+  def clickPreviousDay() = click(previousDayButtonId)
+  def clickNextDay() = click(nextDayButtonId)
 
   def assertMonthTitle(date: DateTime) = browser.assert(TextEquals(Id(monthTitleId), MonthCalendar.title(new Interval(date, date.plusMonths(1)))))
   def assertDayTitle(date: DateTime) = browser.assert(TextEquals(Id(dayTitleId), DayCalendar.title(new Interval(date, date.plusMonths(1)))))

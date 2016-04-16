@@ -25,8 +25,8 @@ object DayCalendar {
   def title(day: Interval) = dayOfTheWeekAndMonth(day.getStart) + " " + monthFull(day.getStart) + " " + day.getStart.getYear
 
   private def previousDayButton(monthInterval: Interval) =
-    SHtml.ajaxButton("< previous day", () ⇒ SetHtml(kipperCalendarContainerId, DayCalendar(new Interval(monthInterval.getStart.minusDays(1), monthInterval.getEnd.minusDays(1)))), "id" → nextDayButtonId, "class" → "col-lg-2 btn btn-primary")
+    SHtml.ajaxButton("< previous day", () ⇒ SetHtml(kipperCalendarContainerId, DayCalendar(new Interval(monthInterval.getStart.minusDays(1), monthInterval.getEnd.minusDays(1)))), "id" → previousDayButtonId, "class" → "col-lg-2 btn btn-primary")
 
   private def nextDayButton(monthInterval: Interval) =
-    SHtml.ajaxButton("next day >", () ⇒ SetHtml(kipperCalendarContainerId, DayCalendar(new Interval(monthInterval.getStart.plusDays(1), monthInterval.getEnd.plusDays(1)))), "class" → "col-lg-2 col-lg-offset-8  btn btn-primary")
+    SHtml.ajaxButton("next day >", () ⇒ SetHtml(kipperCalendarContainerId, DayCalendar(new Interval(monthInterval.getStart.plusDays(1), monthInterval.getEnd.plusDays(1)))), "id" → nextDayButtonId, "class" → "col-lg-2 col-lg-offset-8  btn btn-primary")
 }
