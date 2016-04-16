@@ -25,4 +25,6 @@ case class CalendarDriver(context: Context, browser: Browser) extends Navigable 
   def assertDayActive = browser.assert(AttributeContains(Id(dayViewButtonId), "class", "active"))
   def assertPreviousMonthButtonDisplayed = browser.assert(TextEquals(Id(previousMonthButtonId), "< previous month"))
   def assertNextMonthButtonDisplayed = browser.assert(TextEquals(Id(nextMonthButtonId), "next month >"))
+  def assertPreviousDayButtonDisplayed = browser.assert(TextEquals(Id(previousDayButtonId), "< previous day"))
+  def assertNextDayButtonDisplayed = browser.assert(TextEquals(Id(nextDayButtonId), "next day >"))
 }
