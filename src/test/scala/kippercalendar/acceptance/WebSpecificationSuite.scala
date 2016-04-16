@@ -11,7 +11,8 @@ object WebSpecificationSuite {
   BrowserTypes.phantomjs.driverBinary =
     System.getProperty("os.name") match {
       case "Mac OS X" ⇒ "tools/phantomjs-1.9.8-macosx/bin/phantomjs"
-      case "Linux"    ⇒ "tools/phantomjs-1.9.8-linux-x86_64/bin/phantomjs"
+      case "Linux"    ⇒ "tools/non_existant_file"
+//      case "Linux"    ⇒ "tools/phantomjs-1.9.8-linux-x86_64/bin/phantomjs"
 //      case "Linux"    ⇒ "phantomjs"
       case other      ⇒ throw new IllegalArgumentException(s"Unsupported operating system: $other")
     }
