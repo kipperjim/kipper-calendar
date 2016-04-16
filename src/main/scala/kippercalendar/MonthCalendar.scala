@@ -10,12 +10,13 @@ import scala.xml.NodeSeq
 
 object MonthCalendar {
 
-  val previousMonthButtonId = "nextMonthButtonId"
-  val dateDisplayedId = "dateDisplayedId"
+  val previousMonthButtonId = "previousMonthButtonId"
+  val nextMonthButtonId = "nextMonthButtonId"
+  val monthTitleId = "monthTitleId"
 
   def apply(monthInterval: Interval): NodeSeq = {
     <h3>
-      <span id={dateDisplayedId}>{title(monthInterval)}</span>
+      <span id={monthTitleId}>{title(monthInterval)}</span>
       {monthDayNavigationButtons(monthInterval, monthActive = true)}
     </h3> ++
     previousMonthButton(monthInterval) ++
@@ -28,6 +29,6 @@ object MonthCalendar {
     SHtml.ajaxButton("< previous month", () ⇒ SetHtml(kipperCalendarContainerId, MonthCalendar(new Interval(monthInterval.getStart.minusMonths(1), monthInterval.getEnd.minusMonths(1)))), "id" → previousMonthButtonId, "class" → "col-lg-2 btn btn-primary")
 
   private def nextMonthButton(monthInterval: Interval) =
-    SHtml.ajaxButton("next month >", () ⇒ SetHtml(kipperCalendarContainerId, MonthCalendar(new Interval(monthInterval.getStart.plusMonths(1), monthInterval.getEnd.plusMonths(1)))), "class" → "col-lg-2 col-lg-offset-8  btn btn-primary")
+    SHtml.ajaxButton("next month >", () ⇒ SetHtml(kipperCalendarContainerId, MonthCalendar(new Interval(monthInterval.getStart.plusMonths(1), monthInterval.getEnd.plusMonths(1)))), "id" → nextMonthButtonId, "class" → "col-lg-2 col-lg-offset-8  btn btn-primary")
 
 }

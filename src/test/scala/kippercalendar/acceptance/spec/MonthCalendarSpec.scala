@@ -4,13 +4,34 @@ import kippercalendar.acceptance.WebSpecification
 import org.joda.time.DateTime
 
 class MonthCalendarSpec extends WebSpecification {
-  object `The next month button should` {
-    def `display the next month`() {
+  object `The initial render should` {
+    def `display the month calendar on the current month`() {
       val page = in.driver.nav.gotoPage()
 
-      page.assertDateShown(new DateTime())
+      page.assertMonthActive
+      page.assertMonthTitle(new DateTime())
+      page.assertNextMonthButtonDisplayed
+      page.assertPreviousMonthButtonDisplayed
+    }
+  }
+
+  object `The next month button should` {
+    def `update the calendar title`() {
+      val page = in.driver.nav.gotoPage()
+
+      page.clickNextMonth
+
+      page.assertMonthTitle(new DateTime().plusMonths(1))
+    }
+  }
+
+  object `The previous month button should` {
+    def `update the calendar title`() {
+      val page = in.driver.nav.gotoPage()
+
       page.clickPreviousMonth
-      page.assertDateShown(new DateTime().minusMonths(1))
+
+      page.assertMonthTitle(new DateTime().minusMonths(1))
     }
   }
 }

@@ -5,7 +5,7 @@ import im.mange.driveby.{BrowserTypes, DriveBy, DriveByConfig}
 object WebSpecificationSuite {
   DriveByConfig.applicationControllers = BuildConfig.applicationControllers()
   DriveByConfig.browserInstances = 1
-  DriveByConfig.trackingVerbose = true
+//  DriveByConfig.trackingVerbose = true
 
   BrowserTypes.chrome.driverBinary = "tools/chromedriver"
   BrowserTypes.phantomjs.driverBinary =
